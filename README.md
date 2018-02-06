@@ -13,7 +13,13 @@ Make sure you do not have any server running on port 8080, that is where Tomcat 
 
 > mvn spring-boot:run
 
-## Problems with the implementation
+## Considerations
 
-I did all the structure for the API, as you can see. Unfortunately I did not had time to set the memory database (H2) that I was willing to do.
-I was planning to build a service (on Gateway package) to search for new Heroes and Abilities on the external API using Feign client.
+Every time the application starts, a service (HeroImporter) is called to bring new heroes and abilities from Overwatch server. Those information are loaded into the H2 in memory database.
+All the REST endpoints are GET Mapped and you can test them in any client (browser) you want:
+
+http://localhost:8080/api/abilities/
+http://localhost:8080/api/abilities/1
+http://localhost:8080/api/heros/
+http://localhost:8080/api/heros/1/
+http://localhost:8080/api/heros/1/abilities
