@@ -12,3 +12,8 @@ The application was designed using Clean Architecture.
 Make sure you do not have any server running on port 8080, that is where Tomcat will make available our application. To run, go to root folder and type on your terminal:
 
 > mvn spring-boot:run
+
+## Problems with the implementation
+
+I did all the structure for the API, as you can see. Unfortunately I did not had time to set the memory database (H2) that I was willing to do.
+I was planning to build a service (on Gateway package) to search for new Heroes and Abilities on the external API using Feign client.
